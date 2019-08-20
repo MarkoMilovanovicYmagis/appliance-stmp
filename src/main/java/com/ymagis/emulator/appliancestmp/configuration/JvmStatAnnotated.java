@@ -10,10 +10,14 @@ import com.ymagis.emulator.appliancestmp.asn.SmiGauge32;
 public class JvmStatAnnotated {
     private String appName = "JVM Statistics";
     private int poolSize = 10;
+    private String emulatorStatus = "Projector is On";
+    private String lampStatus;
+    private String projectorMovie;
 
     public JvmStatAnnotated(String appName, int poolSize) {
         this.appName = appName;
         this.poolSize = poolSize;
+
     }
 
     @MibProperty(oid = "1.3.6.1.4.1.28824.99.1.0", writable = true, requiredType = AsnOctetString.class)
@@ -58,4 +62,13 @@ public class JvmStatAnnotated {
     public int getNumberOfThreads() {
         return Thread.activeCount();
     }
+
+
+    //emulator oid
+    @MibProperty(oid = "1.3.6.1.4.1.119.2.3.123.1.3", writable = true, requiredType = AsnOctetString.class)
+    public String getEmulatorStatus() {
+        return emulatorStatus;
+    }
+
+
 }
