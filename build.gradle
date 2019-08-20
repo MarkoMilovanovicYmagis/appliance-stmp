@@ -27,12 +27,15 @@ repositories {
 
 
 apply plugin: 'com.palantir.docker'
+//apply plugin: 'war'
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
 	compile group: 'commons-beanutils', name: 'commons-beanutils', version: '1.9.3'
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-web'
+	runtime 'org.springframework.boot:spring-boot-starter-tomcat'
 }
 
 docker {
